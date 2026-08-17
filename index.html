@@ -1,0 +1,1189 @@
+<title>Follow Feed — Live Preview</title>
+<style>
+  :root{
+    --jim-photo:url(data:image/png;base64,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);
+    --cream:#e7e6e6;
+    --cream-hi:#f5f4f3;
+    --text:#2D2D2D;
+    --text-dim:#5c5b5b;
+    --navy:#363636;
+    --navy-deep:#242424;
+    --primary:#FF7738;
+    --primary-tint:rgba(255,119,56,.12);
+    --accent:#1a8ec6;
+    --accent-tint:rgba(26,142,198,.16);
+    --line:rgba(45,45,45,.14);
+    --credit:#166534;
+    --credit-bg:#f0fdf4;
+    --debit:#991b1b;
+    --debit-bg:#fef2f2;
+    --warn:#b45309;
+    --warn-bg:#fffbeb;
+    --warn-line:rgba(180,83,9,.35);
+    --surface:#ffffff;
+    --surface-2:var(--cream-hi);
+    --shadow: 0 1px 2px rgba(45,45,45,.06), 0 8px 24px -12px rgba(45,45,45,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:var(--navy);
+      --cream-hi:#3d3d3d;
+      --text:#f2f1ef;
+      --text-dim:#b9b7b4;
+      --line:rgba(255,255,255,.12);
+      --primary-tint:rgba(255,119,56,.16);
+      --accent-tint:rgba(26,142,198,.22);
+      --credit-bg:rgba(22,101,52,.18);
+      --credit:#5fd394;
+      --debit-bg:rgba(153,27,27,.2);
+      --debit:#ff9b9b;
+      --warn:#f2b84b;
+      --warn-bg:rgba(180,131,9,.16);
+      --warn-line:rgba(242,184,75,.35);
+      --surface:var(--navy-deep);
+      --surface-2:#2f2f2f;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 30px -14px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:var(--navy); --cream-hi:#3d3d3d; --text:#f2f1ef; --text-dim:#b9b7b4;
+    --line:rgba(255,255,255,.12); --primary-tint:rgba(255,119,56,.16); --accent-tint:rgba(26,142,198,.22);
+    --credit-bg:rgba(22,101,52,.18); --credit:#5fd394; --debit-bg:rgba(153,27,27,.2); --debit:#ff9b9b;
+    --warn:#f2b84b; --warn-bg:rgba(180,131,9,.16); --warn-line:rgba(242,184,75,.35);
+    --surface:var(--navy-deep); --surface-2:#2f2f2f;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 30px -14px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55;}
+  .wrap{max-width:900px;margin:0 auto;padding:56px 24px 100px;}
+
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);font-weight:700;margin:0 0 14px;}
+  h1{font-size:clamp(26px,4vw,36px);line-height:1.14;margin:0 0 10px;letter-spacing:-.01em;text-wrap:balance;font-weight:800;}
+  .sub{color:var(--text-dim);font-size:15.5px;margin:0 0 28px;max-width:66ch;}
+
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;box-shadow:var(--shadow);min-width:96px;}
+  .stat .n{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;}
+  .stat .l{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+  .stat.warn .n{color:var(--warn);}
+  .stat.warn{border-color:var(--warn-line);}
+  .stat.muted .n{color:var(--text-dim);font-size:18px;}
+
+  .feed{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:6px;}
+
+  .fcard-wrap{background:var(--surface);border-radius:9px;margin-bottom:6px;box-shadow:var(--shadow);overflow:hidden;}
+  .fcard-wrap:last-child{margin-bottom:0;}
+  .fcard-wrap.review{outline:1px solid var(--warn-line);}
+  .fcard-wrap > summary{list-style:none;cursor:pointer;}
+  .fcard-wrap > summary::-webkit-details-marker{display:none;}
+  .fcard-wrap > summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+  .fcard{display:grid;grid-template-columns:auto 1fr auto auto auto;gap:14px;align-items:center;padding:12px 16px;}
+  .fchev{color:var(--text-dim);font-size:12px;transition:transform .15s ease;justify-self:end;}
+  .fcard-wrap[open] .fchev{transform:rotate(90deg);color:var(--accent);}
+
+  .favatar{width:34px;height:34px;border-radius:50%;flex-shrink:0;background-image:var(--jim-photo);background-size:cover;background-position:center 30%;border:1px solid var(--line);}
+  .fmain .fsym{font-weight:800;font-size:14px;margin-right:8px;}
+  .fmain .ftime{color:var(--text-dim);font-size:11.5px;font-variant-numeric:tabular-nums;}
+  .fmain .fdesc{font-size:13px;margin-top:2px;}
+  .fdesc.credit{color:var(--credit);font-weight:700;}
+  .fdesc.debit{color:var(--primary);font-weight:700;}
+
+  .ftag{font-size:10px;font-weight:800;letter-spacing:.05em;padding:3px 8px;border-radius:20px;white-space:nowrap;}
+  .ftag.roll{background:var(--accent-tint);color:var(--accent);}
+  .ftag.open{background:var(--primary-tint);color:var(--primary);}
+  .ftag.close{background:var(--surface-2);color:var(--text-dim);border:1px solid var(--line);}
+  .ftag.review{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-line);}
+
+  .fprice{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-weight:700;font-size:13.5px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .fprice.credit{color:var(--credit);}
+  .fprice.debit{color:var(--primary);}
+  .fprice .unit{font-size:10px;color:var(--text-dim);font-weight:600;margin-left:2px;}
+
+  .fdetail{border-top:1px solid var(--line);background:var(--surface-2);padding:12px 16px 14px;}
+  .freview{font-size:12.5px;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:7px;padding:8px 11px;margin-bottom:10px;}
+  table.flegs{width:100%;border-collapse:collapse;font-size:12px;}
+  table.flegs th{text-align:left;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);font-weight:700;padding:0 10px 6px 0;border-bottom:1px solid var(--line);}
+  table.flegs td{padding:6px 10px 6px 0;border-bottom:1px solid var(--line);font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums;}
+  table.flegs tr:last-child td{border-bottom:none;}
+  .fpill{font-family:-apple-system,sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.03em;padding:2px 6px;border-radius:20px;}
+  .fpill.sell{background:var(--credit-bg);color:var(--credit);}
+  .fpill.buy{background:var(--primary-tint);color:var(--primary);}
+
+  .foot{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);color:var(--text-dim);font-size:12px;}
+
+</style>
+
+<div class="wrap">
+  <p class="kicker">drjimtradinglab.com — preview build, not for public use</p>
+  <h1>Follow Feed, built from your real CSV</h1>
+  <p class="sub">Every card below came out of the actual classification pipeline described in the plan, run against your Jul&nbsp;18–Aug&nbsp;17 export — nothing here is hand-written or staged. This is what Jim would see land in the review queue after an upload.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">54</div><div class="l">events</div></div>
+    <div class="stat"><div class="n">24</div><div class="l">opened</div></div>
+    <div class="stat"><div class="n">13</div><div class="l">rolled</div></div>
+    <div class="stat"><div class="n">16</div><div class="l">closed</div></div>
+    <div class="stat warn"><div class="n">1</div><div class="l">needs review</div></div>
+    <div class="stat muted"><div class="n">28</div><div class="l">dividend / fee rows omitted</div></div>
+  </div>
+
+  <div class="feed">
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">IBM</span><span class="ftime">Aug 17 · 12:47 PM</span>
+            <div class="fdesc debit">Closed Strangle — 215P / 255C</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−5.67<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>32d</td><td>215</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>3.65</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>32d</td><td>255</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>2.02</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">NFLX</span><span class="ftime">Aug 17 · 12:46 PM</span>
+            <div class="fdesc debit">Closed Strangle — 72P / 81C</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−2.42<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>32d</td><td>72</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>1.21</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>32d</td><td>81</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>1.21</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">META</span><span class="ftime">Aug 17 · 12:45 PM</span>
+            <div class="fdesc credit">Rolled Call — 660 → 635</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+2.30<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>32d</td><td>660</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>2.59</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>32d</td><td>635</td><td>C</td><td><span class="fpill sell">STO</span></td><td>4.89</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">AMD</span><span class="ftime">Aug 17 · 12:43 PM</span>
+            <div class="fdesc debit">Closed Strangle — 400P / 610C</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−9.17<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>32d</td><td>400</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>2.83</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>32d</td><td>610</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>6.34</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">AMD</span><span class="ftime">Aug 17 · 8:28 AM</span>
+            <div class="fdesc credit">Sold 3 AMD 450 Put, exp 10/16/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+17.50<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>3</td><td>10/16/26</td><td>60d</td><td>450</td><td>P</td><td><span class="fpill sell">STO</span></td><td>17.50</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">AMZN</span><span class="ftime">Aug 14 · 8:20 AM</span>
+            <div class="fdesc debit">Bought 1 AMZN 295 Call, exp 9/18/26</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−1.31<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>35d</td><td>295</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>1.31</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">STX</span><span class="ftime">Aug 14 · 7:17 AM</span>
+            <div class="fdesc credit">Rolled Put — 710 → 820</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+19.70<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>35d</td><td>820</td><td>P</td><td><span class="fpill sell">STO</span></td><td>29.10</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>35d</td><td>710</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>9.40</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">NFLX</span><span class="ftime">Aug 13 · 7:21 AM</span>
+            <div class="fdesc credit">Rolled Put — 68 → 72</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+0.58<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>36d</td><td>68</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>0.34</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>36d</td><td>72</td><td>P</td><td><span class="fpill sell">STO</span></td><td>0.92</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">META</span><span class="ftime">Aug 13 · 7:19 AM</span>
+            <div class="fdesc credit">Rolled Call — 685 → 660</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+2.58<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>36d</td><td>685</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>3.52</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>36d</td><td>660</td><td>C</td><td><span class="fpill sell">STO</span></td><td>6.10</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">IBM</span><span class="ftime">Aug 13 · 7:18 AM</span>
+            <div class="fdesc credit">Rolled Put — 205 → 215</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+1.16<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>36d</td><td>215</td><td>P</td><td><span class="fpill sell">STO</span></td><td>2.26</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>36d</td><td>205</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>1.10</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">INTC</span><span class="ftime">Aug 13 · 7:09 AM</span>
+            <div class="fdesc debit">Bought 4 INTC 90 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−2.97<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>4</td><td>9/18/26</td><td>36d</td><td>90</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>2.97</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">AMZN</span><span class="ftime">Aug 12 · 7:29 AM</span>
+            <div class="fdesc credit">Sold 1 AMZN 295 Call, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+2.47<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>37d</td><td>295</td><td>C</td><td><span class="fpill sell">STO</span></td><td>2.47</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">STX</span><span class="ftime">Aug 12 · 7:28 AM</span>
+            <div class="fdesc credit">Rolled Put — 640 → 710</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+10.40<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>37d</td><td>640</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>8.95</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>37d</td><td>710</td><td>P</td><td><span class="fpill sell">STO</span></td><td>19.35</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">GOOG</span><span class="ftime">Aug 12 · 7:26 AM</span>
+            <div class="fdesc credit">Rolled Call — 395 → 370</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+2.74<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>37d</td><td>395</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>1.20</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>37d</td><td>370</td><td>C</td><td><span class="fpill sell">STO</span></td><td>3.94</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">ARM</span><span class="ftime">Aug 12 · 7:23 AM</span>
+            <div class="fdesc credit">Sold 3 ARM 230 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+7.65<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>3</td><td>9/18/26</td><td>37d</td><td>230</td><td>P</td><td><span class="fpill sell">STO</span></td><td>7.65</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">AMZN</span><span class="ftime">Aug 11 · 11:30 AM</span>
+            <div class="fdesc debit">Bought 1 AMZN 305 Call, exp 9/18/26</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−1.62<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>38d</td><td>305</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>1.62</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">ARM</span><span class="ftime">Aug 11 · 11:30 AM</span>
+            <div class="fdesc debit">Closed Strangle — 210P / 360C</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−8.59<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>38d</td><td>360</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>4.47</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>38d</td><td>210</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>4.12</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">TSM</span><span class="ftime">Aug 11 · 11:29 AM</span>
+            <div class="fdesc debit">Closed Strangle — 370P / 490C</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−7.24<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>38d</td><td>370</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>3.95</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>38d</td><td>490</td><td>C</td><td><span class="fpill buy">BTC</span></td><td>3.29</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">HOOD</span><span class="ftime">Aug 10 · 9:08 AM</span>
+            <div class="fdesc credit">Sold Strangle — 80P / 120C</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+3.73<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>8</td><td>9/18/26</td><td>39d</td><td>80</td><td>P</td><td><span class="fpill sell">STO</span></td><td>2.12</td></tr>
+            <tr><td>8</td><td>9/18/26</td><td>39d</td><td>120</td><td>C</td><td><span class="fpill sell">STO</span></td><td>1.61</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">STX</span><span class="ftime">Aug 10 · 8:50 AM</span>
+            <div class="fdesc credit">Sold Strangle — 640P / 1100C</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+36.75<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>39d</td><td>1100</td><td>C</td><td><span class="fpill sell">STO</span></td><td>16.05</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>39d</td><td>640</td><td>P</td><td><span class="fpill sell">STO</span></td><td>20.70</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">TSM</span><span class="ftime">Aug 10 · 8:31 AM</span>
+            <div class="fdesc credit">Rolled Put — 340 → 370</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+3.05<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>39d</td><td>370</td><td>P</td><td><span class="fpill sell">STO</span></td><td>4.60</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>39d</td><td>340</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>1.55</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">NFLX</span><span class="ftime">Aug 10 · 8:30 AM</span>
+            <div class="fdesc credit">Rolled Put — 63 → 68</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+0.53<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>39d</td><td>68</td><td>P</td><td><span class="fpill sell">STO</span></td><td>0.76</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>39d</td><td>63</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>0.23</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">HOOD</span><span class="ftime">Aug 10 · 7:45 AM</span>
+            <div class="fdesc debit">Bought 9 HOOD 75 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−1.21<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>9</td><td>9/18/26</td><td>39d</td><td>75</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>1.21</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">SMH</span><span class="ftime">Aug 7 · 12:15 PM</span>
+            <div class="fdesc debit">Bought 1 SMH 475 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−5.15<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>42d</td><td>475</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>5.15</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">META</span><span class="ftime">Aug 7 · 8:44 AM</span>
+            <div class="fdesc credit">Sold Strangle — 530P / 685C</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+11.77<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>42d</td><td>685</td><td>C</td><td><span class="fpill sell">STO</span></td><td>5.85</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>42d</td><td>530</td><td>P</td><td><span class="fpill sell">STO</span></td><td>5.92</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">AMD</span><span class="ftime">Aug 7 · 8:06 AM</span>
+            <div class="fdesc credit">Sold Strangle — 400P / 610C</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+17.80<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>42d</td><td>400</td><td>P</td><td><span class="fpill sell">STO</span></td><td>9.35</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>42d</td><td>610</td><td>C</td><td><span class="fpill sell">STO</span></td><td>8.45</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">MCD</span><span class="ftime">Aug 7 · 7:03 AM</span>
+            <div class="fdesc debit">Bought 36 MCD @ 275.99</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice debit">−275.99<span class="unit">shr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>36</td><td>—</td><td>—</td><td>—</td><td>STK</td><td><span class="fpill buy">BUY</span></td><td>275.99</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">PLTR</span><span class="ftime">Aug 7 · 6:52 AM</span>
+            <div class="fdesc debit">Bought 5 PLTR 130 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−1.12<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>5</td><td>9/18/26</td><td>42d</td><td>130</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>1.12</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">HD</span><span class="ftime">Aug 6 · 9:13 AM</span>
+            <div class="fdesc debit">Bought 5 HD @ 349.03</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice debit">−349.03<span class="unit">shr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>5</td><td>—</td><td>—</td><td>—</td><td>STK</td><td><span class="fpill buy">BUY</span></td><td>349.03</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">AMZN</span><span class="ftime">Aug 6 · 9:10 AM</span>
+            <div class="fdesc credit">Sold 1 AMZN 305 Call, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+2.73<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>43d</td><td>305</td><td>C</td><td><span class="fpill sell">STO</span></td><td>2.73</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">CAT</span><span class="ftime">Aug 6 · 8:12 AM</span>
+            <div class="fdesc debit">Bought 1 CAT 760 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−12.44<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>43d</td><td>760</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>12.44</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">INTC</span><span class="ftime">Aug 6 · 7:58 AM</span>
+            <div class="fdesc credit">Sold 4 INTC 90 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+5.22<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>4</td><td>9/18/26</td><td>43d</td><td>90</td><td>P</td><td><span class="fpill sell">STO</span></td><td>5.22</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">IBM</span><span class="ftime">Aug 5 · 7:15 AM</span>
+            <div class="fdesc credit">Rolled Put — 190 → 205</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+1.75<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>44d</td><td>205</td><td>P</td><td><span class="fpill sell">STO</span></td><td>2.91</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>44d</td><td>190</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>1.16</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">SBUX</span><span class="ftime">Aug 4 · 11:19 AM</span>
+            <div class="fdesc credit">Sold 2 SBUX 115 Call, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+1.05<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>2</td><td>9/18/26</td><td>45d</td><td>115</td><td>C</td><td><span class="fpill sell">STO</span></td><td>1.05</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">ARM</span><span class="ftime">Aug 4 · 11:00 AM</span>
+            <div class="fdesc credit">Rolled Put — 190 → 210</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+3.60<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>45d</td><td>190</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>4.50</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>45d</td><td>210</td><td>P</td><td><span class="fpill sell">STO</span></td><td>8.10</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">CAT</span><span class="ftime">Aug 4 · 7:50 AM</span>
+            <div class="fdesc credit">Sold 1 CAT 760 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+13.80<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>45d</td><td>760</td><td>P</td><td><span class="fpill sell">STO</span></td><td>13.80</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">PLTR</span><span class="ftime">Aug 4 · 7:19 AM</span>
+            <div class="fdesc credit">Sold 5 PLTR 130 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+2.25<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>5</td><td>9/18/26</td><td>45d</td><td>130</td><td>P</td><td><span class="fpill sell">STO</span></td><td>2.25</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">SMH</span><span class="ftime">Aug 4 · 7:04 AM</span>
+            <div class="fdesc credit">Sold 1 SMH 475 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+10.31<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>45d</td><td>475</td><td>P</td><td><span class="fpill sell">STO</span></td><td>10.31</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">TSLA</span><span class="ftime">Aug 4 · 6:30 AM</span>
+            <div class="fdesc debit">Bought 1 TSLA 260 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−2.26<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>45d</td><td>260</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>2.26</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">GOOG</span><span class="ftime">Aug 3 · 10:10 AM</span>
+            <div class="fdesc credit">Rolled Put — 310 → 335</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+2.63<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>46d</td><td>335</td><td>P</td><td><span class="fpill sell">STO</span></td><td>4.09</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>46d</td><td>310</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>1.46</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">COIN</span><span class="ftime">Aug 3 · 10:06 AM</span>
+            <div class="fdesc credit">Sold 1 COIN 195 Call, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+3.82<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>46d</td><td>195</td><td>C</td><td><span class="fpill sell">STO</span></td><td>3.82</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">COIN</span><span class="ftime">Aug 3 · 10:01 AM</span>
+            <div class="fdesc credit">Rolled Put — 8/21/26 → 9/18/26 (210)</div>
+          </div>
+          <span class="ftag roll">ROLL</span>
+          <div class="fprice credit">+1.33<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>46d</td><td>210</td><td>P</td><td><span class="fpill sell">STO</span></td><td>61.57</td></tr>
+            <tr><td>1</td><td>8/21/26</td><td>18d</td><td>210</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>60.24</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">HOOD</span><span class="ftime">Aug 3 · 9:51 AM</span>
+            <div class="fdesc credit">Sold 9 HOOD 75 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+2.42<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>9</td><td>9/18/26</td><td>46d</td><td>75</td><td>P</td><td><span class="fpill sell">STO</span></td><td>2.42</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">MSFT</span><span class="ftime">Aug 3 · 6:40 AM</span>
+            <div class="fdesc debit">Bought 1 MSFT 395 Put, exp 10/16/26</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−2.97<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>10/16/26</td><td>74d</td><td>395</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>2.97</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">TSM</span><span class="ftime">Jul 31 · 7:59 AM</span>
+            <div class="fdesc credit">Sold Strangle — 340P / 490C</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+11.06<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>49d</td><td>340</td><td>P</td><td><span class="fpill sell">STO</span></td><td>5.53</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>49d</td><td>490</td><td>C</td><td><span class="fpill sell">STO</span></td><td>5.53</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">ARM</span><span class="ftime">Jul 31 · 7:57 AM</span>
+            <div class="fdesc credit">Sold Strangle — 190P / 360C</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+12.33<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>49d</td><td>360</td><td>C</td><td><span class="fpill sell">STO</span></td><td>4.94</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>49d</td><td>190</td><td>P</td><td><span class="fpill sell">STO</span></td><td>7.39</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">GOOG</span><span class="ftime">Jul 31 · 7:39 AM</span>
+            <div class="fdesc credit">Sold Strangle — 310P / 395C</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+6.92<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>49d</td><td>310</td><td>P</td><td><span class="fpill sell">STO</span></td><td>3.62</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>49d</td><td>395</td><td>C</td><td><span class="fpill sell">STO</span></td><td>3.30</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">MSFT</span><span class="ftime">Jul 31 · 7:38 AM</span>
+            <div class="fdesc credit">Sold 1 MSFT 395 Put, exp 10/16/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+5.95<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>10/16/26</td><td>77d</td><td>395</td><td>P</td><td><span class="fpill sell">STO</span></td><td>5.95</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">TSLA</span><span class="ftime">Jul 31 · 7:37 AM</span>
+            <div class="fdesc credit">Sold 1 TSLA 260 Put, exp 9/18/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+4.53<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>49d</td><td>260</td><td>P</td><td><span class="fpill sell">STO</span></td><td>4.53</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap review">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">IBM</span><span class="ftime">Jul 31 · 7:34 AM</span>
+            <div class="fdesc credit">Multi-leg adjustment (3 legs) — mixed close/open across different expirations</div>
+          </div>
+          <span class="ftag review">NEEDS REVIEW</span>
+          <div class="fprice credit">+1.25<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          <div class="freview">This one has legs that close an old position and open new ones in the same order — exactly the ambiguous case that gets held for Jim to confirm or split, rather than auto-published.</div>
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>8/21/26</td><td>21d</td><td>207.5</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>4.73</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>49d</td><td>190</td><td>P</td><td><span class="fpill sell">STO</span></td><td>3.37</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>49d</td><td>255</td><td>C</td><td><span class="fpill sell">STO</span></td><td>2.61</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">MSFT</span><span class="ftime">Jul 30 · 6:47 AM</span>
+            <div class="fdesc debit">Bought 1 MSFT 365 Put, exp 1/15/27</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−9.05<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>1/15/27</td><td>169d</td><td>365</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>9.05</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">MSFT</span><span class="ftime">Jul 30 · 6:46 AM</span>
+            <div class="fdesc debit">Bought 1 MSFT 410 Put, exp 1/15/27</div>
+          </div>
+          <span class="ftag close">CLOSE</span>
+          <div class="fprice debit">−20.35<span class="unit">db</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>1/15/27</td><td>169d</td><td>410</td><td>P</td><td><span class="fpill buy">BTC</span></td><td>20.35</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">IBM</span><span class="ftime">Jul 29 · 11:46 AM</span>
+            <div class="fdesc credit">Sold 1 IBM 207.5 Put, exp 8/21/26</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+2.20<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>8/21/26</td><td>23d</td><td>207.5</td><td>P</td><td><span class="fpill sell">STO</span></td><td>2.20</td></tr>
+          </table>
+        </div>
+      </details>
+      <details class="fcard-wrap">
+        <summary class="fcard">
+          <div class="favatar"></div>
+          <div class="fmain">
+            <span class="fsym">NFLX</span><span class="ftime">Jul 27 · 7:40 AM</span>
+            <div class="fdesc credit">Sold Strangle — 63P / 81C</div>
+          </div>
+          <span class="ftag open">OPEN</span>
+          <div class="fprice credit">+1.85<span class="unit">cr</span></div>
+          <span class="fchev">▶</span>
+        </summary>
+        <div class="fdetail">
+          
+          <table class="flegs">
+            <tr><th>Qty</th><th>Exp</th><th>DTE</th><th>Strike</th><th>Type</th><th>Action</th><th>Price</th></tr>
+            <tr><td>1</td><td>9/18/26</td><td>53d</td><td>81</td><td>C</td><td><span class="fpill sell">STO</span></td><td>0.93</td></tr>
+            <tr><td>1</td><td>9/18/26</td><td>53d</td><td>63</td><td>P</td><td><span class="fpill sell">STO</span></td><td>0.92</td></tr>
+          </table>
+        </div>
+      </details>
+  </div>
+
+  <div class="foot">Generated directly from tastytrade_transactions_history_x5WX84929_260718_to_260817.csv — no manual edits, no fabricated Reasons. Click any card to expand its legs.</div>
+</div>
