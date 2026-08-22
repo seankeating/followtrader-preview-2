@@ -1,4 +1,4 @@
-<title>Position Detail — COIN</title>
+<title>Trade Follow - COIN</title>
 <style>
   :root{
     --cream:#e7e6e6; --cream-hi:#f5f4f3; --text:#2D2D2D; --text-dim:#5c5b5b; --text-mute:#8a8988;
@@ -107,8 +107,7 @@
 
 <div class="wrap">
   <p class="kicker">Position detail — a trade isn't over when it's rolled</p>
-  <h1>COIN — the anchor put, rolled 8 times over 227 days</h1>
-  <p class="sub">Every roll of a single short put, traced by matching strike/expiration across the whole year — not a snapshot of one CSV upload. This is the "keep fighting it" story the flat feed can't tell on its own.</p>
+  <h1>Trade Follow - COIN</h1>
 
   <div class="stats">
     <div class="stat"><div class="l">Realized P&amp;L</div><div class="v debit">−$1,214.00</div></div>
@@ -116,13 +115,6 @@
     <div class="stat"><div class="l">Rolls</div><div class="v">8</div></div>
     <div class="stat"><div class="l">Commissions</div><div class="v">−$9.00</div></div>
     <div class="stat"><div class="l">Fees</div><div class="v">−$2.53</div></div>
-  </div>
-
-  <div class="live-note">
-    <div>
-      <b>Mark, Net Liq, and Total P&amp;L not shown</b>
-      Those need a live options quote for the still-open leg — not something a transaction-history CSV can supply on its own. Realized P&amp;L above is exact (verified to the penny against tastytrade's own number); the "what's it worth right now" figure needs the live market-data hookup from Phase 2+.
-    </div>
   </div>
 
   <div class="current-pos">
@@ -197,14 +189,6 @@
         <div class="leg-row"><span class="qty">−1</span><span class="exp">Feb 20</span><span class="dte">44d</span><span class="strike-type">230 P</span><span class="leg-pill sell">STO</span><span class="leg-price">10.80</span></div>
       </div>
     </div>
-  </div>
-
-  <h2>Also happened along the way</h2>
-  <p class="side-note">Three separate, fully independent COIN trades placed and closed during this same stretch — different strikes, don't share this position's identity, but part of the real trading activity around this underlying. Excluded from the timeline above (and from tastytrade's own grouping) because they never touch the anchor put's strike or expiration.</p>
-  <div class="side-list">
-    <div class="side-row"><span class="date">6/12–6/22</span><span class="label">Short-lived 155 put, opened and closed 10 days later</span><span class="val credit">+$465</span></div>
-    <div class="side-row"><span class="date">7/9–7/14</span><span class="label">100/120 put spread, opened and closed 5 days later</span><span class="val credit">+$19</span></div>
-    <div class="side-row"><span class="date">8/3–8/19</span><span class="label">195 covered call, opened and closed 16 days later</span><span class="val credit">+$52</span></div>
   </div>
 
   <div class="foot">Traced from tastytrade_transactions_history_x5WX84929_260101_to_260821.csv by matching each leg's strike + expiration across the full year — not a per-upload grouping. Realized P&amp;L verified to the penny against tastytrade's own "Realized P&amp;L" figure for this same position.</div>
